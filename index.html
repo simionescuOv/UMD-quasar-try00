@@ -70,9 +70,11 @@
 
         <q-page-container>
             <!-- <input type="number" v-model="cautare" placeholder="cauta pret" /> -->
-            <q-search icon="pregnant_woman" color="secondary" 
+            <q-search type='number'
+                      icon="pregnant_woman" color="secondary" 
                       v-model="cautare" float-label="Cautare dupa pret"
                       placeholder='introdu pretul'
+                      clearable
                       autofocus />
   
             <hr>
@@ -102,7 +104,11 @@
 
         </q-page-container>
 
+       
+   
 
+    
+      
       </q-layout>
     </div>
 
@@ -114,7 +120,19 @@
           <h1>All Blog Articles</h1>
     
        </div>
-    
+
+       
+       <q-page-sticky position="bottom-left" :offset="[18, 18]">
+       <q-fab
+         icon="add"
+         direction="up"
+         color="primary"
+       >
+         <q-fab-action @click="alert" color="pink" class="white" icon="person add" />
+         <q-fab-action @click="alert" color="purple" class="white" icon="mail" />
+       </q-fab>
+     </q-page-sticky>
+
       </q-page>
     </script>
 
