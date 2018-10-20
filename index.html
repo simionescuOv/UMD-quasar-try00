@@ -37,10 +37,17 @@
             <q-btn flat round dense @click="drawerState = !drawerState" icon="menu"></q-btn>
 
             <q-toolbar-title>
-              Quasar App - try00
-              <div slot="subtitle">Running on Quasar v{{ version }}</div>
+              <q-datetime v-model="datautiliz" type="date" />
+              
             </q-toolbar-title>
+              <q-btn flat round dense icon="launch" color="white">
+              </q-btn>
+                <q-btn flat round dense icon="shopping_cart">
+                  <q-chip floating color="red">29</q-chip>
+                </q-btn>
+           
           </q-toolbar>
+          
         </q-layout-header>
 
         <q-layout-drawer
@@ -70,17 +77,22 @@
 
         <q-page-container>
             <!-- <input type="number" v-model="cautare" placeholder="cauta pret" /> -->
+            
             <q-search type='number'
                       icon="pregnant_woman" color="secondary" 
                       v-model="cautare" float-label="Cautare dupa pret"
                       placeholder='introdu pretul'
              />
-  
-            <hr>
+             
+           
             <!-- <div style="width: 500px; max-width: 90vw;"> -->
+                <div>{{datautiliz}}</div>
               <div>
+                  
                 <q-list highlight inset-separator color="dark" >
+                    
                   <q-list-header>
+                      
                       <q-item>
                           <q-item-side >pret</q-item-side>
                           <q-item-main >Denumire</q-item-main>
@@ -95,12 +107,9 @@
                   </q-item>
                 </q-list>
               </div>
-
-            
-          
-
+              
         </q-page-container>
-        <my-page></my-page>
+                             <my-page></my-page>
       </q-layout>
     </div>
 
@@ -126,7 +135,8 @@
     
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar-framework@^0.17.0/dist/umd/quasar.mat.umd.min.js"></script>
-    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/quasar-framework@^0.17.0/dist/umd/i18n.no.umd.min.js"></script>
+      -->
     <script>
       const arrobj=[
  {
@@ -390,7 +400,7 @@
    pret: '110'
  }
 ]
-     // Quasar.i18n.set(Quasar.i18n.no)
+      Quasar.i18n.set(Quasar.i18n.no)
       
       Vue.component('my-page', {
         template: '#my-page'
@@ -403,6 +413,7 @@
             cautare: '',
             version: Quasar.version,
             drawerState: true,
+            datautiliz: new Date(),
             blogs: arrobj 
             
           }
