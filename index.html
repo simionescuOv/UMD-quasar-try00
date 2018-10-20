@@ -96,11 +96,11 @@
                 </q-list>
               </div>
 
-
-          <my-page></my-page>
+            
+          
 
         </q-page-container>
-      
+        <my-page></my-page>
       </q-layout>
     </div>
 
@@ -108,22 +108,17 @@
       <q-page padding>
     
         <!-- page content; replace this entirely -->
-        <div>
-          <h1>All Blog Articles</h1>
-    
-       </div>
-
-       
-       <q-page-sticky position="bottom-left" :offset="[18, 18]">
+    <q-page-sticky position="bottom-left" :offset="[18, 18]">
        <q-fab
          icon="add"
          direction="up"
-         color="primary"
+         color="info"
        >
-         <q-fab-action @click="alert" color="pink" class="white" icon="person add" />
-         <q-fab-action @click="alert" color="purple" class="white" icon="mail" />
+         <q-fab-action @click="alert" color="green" class="white" icon="input" />
+         <q-fab-action @click="alert" color="red" class="white" icon="launch" />
+         <q-fab-action @click="alert" color="blue" class="white" icon="euro_symbol" />
        </q-fab>
-     </q-page-sticky>
+    </q-page-sticky>
 
       </q-page>
     </script>
